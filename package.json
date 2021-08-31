@@ -1,7 +1,23 @@
 {
-  "name": "react-todo",
+  "name": "@hiratake/react-todo",
   "version": "0.1.0",
-  "private": true,
+  "description": "react todo app",
+  "keywords": [
+    "react",
+    "todo"
+  ],
+  "homepage": "https://github.com/Hiratake/react-todo",
+  "bugs": "https://github.com/Hiratake/react-todo/issues",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Hiratake",
+    "url": "https://hiratake.xyz/",
+    "email": "hiratake@hiratake.xyz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hiratake/react-todo.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -11,11 +27,10 @@
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "husky": "^7.0.2"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +49,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prepare": "husky install"
+  },
+  "private": true
 }
