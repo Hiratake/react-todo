@@ -8,18 +8,26 @@ import Todo from './components/Todo'
 
 const App = (props) => {
   const [tasks, setTasks] = useState(props.tasks)
-
+  const toggleTaskCompleted = (id) => {
+    const updatedTasks = tasks.map((task) => {
+      if (id === task.id) {
+        return { ...task, completed: !task.completed }
+      }
+      return task
+    })
+    setTasks(updatedTasks)
+  }
   const taskList = tasks.map((task) => (
     <Todo
       key={task.id}
       id={task.id}
       name={task.name}
       completed={task.completed}
+      onCompleted={toggleTaskCompleted}
     />
   ))
   const tasksNoun = taskList.length !== 1 ? 'tasks' : 'task'
   const headingText = `${taskList.length} ${tasksNoun} remaining`
-
   const addTask = (name) => {
     const newTask = { id: `todo-${nanoid()}`, name: name, completed: false }
     setTasks([...tasks, newTask])
